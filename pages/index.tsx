@@ -28,24 +28,7 @@ const Home: NextPage = () => {
     "0xE62d775E3Cc91659034dFC3b09a46259D6942c2c"
   );
 
-  async function claim() {
-    if (!address) {
-      connectWithMetamask();
-      return;
-    }
-
-    if (isMismatch) {
-      switchNetwork?.(ChainId.BinanceSmartChainMainnet);
-      return;
-    }
-
-    try {
-      const tx = await signatureDrop?.claimTo(address, quantity);
-      alert(`Succesfully minted NFT!`);
-    } catch (error: any) {
-      alert(error?.message);
-    }
-  }
+  
 
   async function claimWithSignature() {
     if (!address) {
@@ -70,7 +53,7 @@ const Home: NextPage = () => {
 
     if (signedPayloadReq.status === 400) {
       alert(
-        "Looks like you don't own an early access NFT :( You don't qualify for the free mint."
+        "Looks like you don't own an Wolfer Finance NFT :( You don't qualify for the free mint."
       );
       return;
     } else {
@@ -93,19 +76,15 @@ const Home: NextPage = () => {
    
     <div className={styles.container}>
       {/* Top Section */}
-      <h1 className={styles.h1}>Signature Drop</h1>
+      <h1 className={styles.h1}>PreSend Retail Investors</h1>
 
       <p className={styles.describe}>
-        In this example, users who own one of our{" "}
+        In this Round, users who own one of our{" "}
         <a href="https://opensea.io/collection/thirdweb-community">
-          Early Access NFTs
+            Wolfer Finance Wolfpack Nfts
         </a>{" "}
-        can mint for free using the{" "}
-        <a href="https://portal.thirdweb.com/pre-built-contracts/signature-drop#signature-minting">
-          Signature Mint
-        </a>
-        . However, for those who don&apos;t own an Early Access NFT, they can
-        still claim using the regular claim function.
+       can mint for a Big Discount. However, for those who don&apos;t own an Wolfer Finance Wolfpack NFT, they can
+        still mint using the regular claim round.
       </p>
 
       {address ? (
@@ -144,8 +123,8 @@ const Home: NextPage = () => {
             
             <h2 className={styles.selectBoxTitle}>Claim NFT</h2>
             <p className={styles.selectBoxDescription}>
-              Use the normal <code>claim</code> function to mint an NFT under
-              the conditions of the claim phase.
+              1 or 2 NFTs are priced at 225 and minting 3 or more at once gives you even more discount at 200 each nft.
+              Hurry up now before this offer is over.
             </p>
           </div>
 
