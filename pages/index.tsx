@@ -113,20 +113,7 @@ const Home: NextPage = () => {
                     +
                   </button>
                 </div> 
-          <div
-            className={styles.optionSelectBox}
-            role="button"      
-            onClick={() => claim()}
-          >
-            
-
-            
-            <h2 className={styles.selectBoxTitle}>Claim NFT</h2>
-            <p className={styles.selectBoxDescription}>
-              1 or 2 NFTs are priced at 225 and minting 3 or more at once gives you even more discount at 200 each nft.
-              Hurry up now before this offer is over.
-            </p>
-          </div>
+          
 
           <div
             className={styles.optionSelectBox}
@@ -135,14 +122,14 @@ const Home: NextPage = () => {
             onClick={() => claimWithSignature()}
           >
             <img
-              src={`/icons/analytics.png`}
+              src={`../public/logo.png`}
               alt="signature-mint"
               className={styles.cardImg}
             />
-            <h2 className={styles.selectBoxTitle}>Mint with Signature</h2>
+            <h2 className={styles.selectBoxTitle}>Mint with WolfPack</h2>
             <p className={styles.selectBoxDescription}>
-              Check if you are eligible to mint an NFT for free, by using
-              signature-based minting.
+               1 or 2 NFTs are priced at 225 and minting 3 or more at once gives you even more discount at 200 each nft.
+              Hurry up now before this offer is over.
             </p>
           </div>
         </div>
