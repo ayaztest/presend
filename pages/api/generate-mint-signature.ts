@@ -1,6 +1,6 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextApiRequest, NextApiResponse } from "next";
-
+import { SecretManagerServiceClient } from "@google-cloud/secret-manager";
 export default async function generateMintSignature(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -27,8 +27,35 @@ const { quantity } = JSON.parse(req.body);
       break;
     }
   }
+const name = process.env.GOOGLE_SECRET_NAME;
 
-  // Now use the SDK on Goerli to get the signature drop
+// Instantiates a client
+const client = new SecretManagerServiceClient();
+
+async function accessSecretVersion() {
+  const [version] = await client.accessSecretVersion({
+    name: name,
+  });
+
+  // Extract the payload as a string.
+  const payload = version.payload?.data?.toString();
+
+  // WARNING: Do not print the secret in a production environment - this
+  // snippet is showing how to access the secret material.
+  //console.info(`Payload: ${payload}`);
+
+  return payload;
+  }
+   const PRIVATE_KEY = await accessSecretVersion();
+  if (!PRIVATE_KEY) {
+    console.error("Missing ADMIN_PRIVATE_KEY environment variable");
+    return res.status(500).json({
+      error: "Admin private key not set",
+    });
+  }
+
+  const sdk = ThirdwebSDK.fromPrivateKey(PRIVATE_KEY.toString(), "binance");
+  
   const BinanceSmartChainMainnetSDK = ThirdwebSDK.fromPrivateKey(
     process.env.PRIVATE_KEY as string,
     "binance"
