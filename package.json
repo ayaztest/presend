@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@thirdweb-dev/react": "^2.7.5-nightly-115e3f1",
-    "@thirdweb-dev/sdk": "^2.3.43-nightly-115e3f1",
-    "@thirdweb-dev/storage": "^0.1.2",
+    "@google-cloud/secret-manager": "^4.1.1",
+    "@thirdweb-dev/react": "^2.8.1",
+    "@thirdweb-dev/sdk": "^2.4.1",
     "ethers": "^5.6.8",
     "next": "^12.1.6",
     "react": "^18.1.0",
