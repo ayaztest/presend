@@ -5713,4 +5713,8 @@ yocto-queue@^0.1.0:
 zod@^3.11.6, zod@^3.18.0:
   version "3.18.0"
   resolved "https://registry.npmjs.org/zod/-/zod-3.18.0.tgz"
+<<<<<<< HEAD
   integrity sha512-gwTm8RfUCe8l9rDwN5r2A17DkAa8Ez4Yl4yXqc5VqeGaXaJahzYYXbTwvhroZi0SNBqTwh/bKm2N0mpCzuw4bA==
+=======
+  integrity sha512-gwTm8RfUCe8l9rDwN5r2A17DkAa8Ez4Yl4yXqc5VqeGaXaJahzYYXbTwvhroZi0SNBqTwh/bKm2N0mpCzuw4bA==
+>>>>>>> ed0df9409750512a1a5845fa4099a35572ba37bb

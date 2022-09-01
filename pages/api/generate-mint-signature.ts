@@ -78,4 +78,8 @@ export default async function generateMintSignature(
       message: "User does not have an early access Wolfer NFT",
     });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ed0df9409750512a1a5845fa4099a35572ba37bb
