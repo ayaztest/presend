@@ -1,6 +1,7 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { SecretManagerServiceClient } from "@google-cloud/secret-manager";
+require('dotenv').config()
 export default async function generateMintSignature(
   req: NextApiRequest,
   res: NextApiResponse
